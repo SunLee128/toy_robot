@@ -1,8 +1,21 @@
 Toy Robot Simulator
 ===================
 
-Description
------------
+## Installation
+`gem install bundler && bundle install`
+
+## How to run
+
+` bundle exec exe/toy_robot commands.txt `
+
+## How to test
+` rake spec`
+
+## Class Diagram
+
+## Test Coverage
+
+## Description
 
 - The application is a simulation of a toy robot moving on a square tabletop,
   of dimensions 5 units x 5 units.
