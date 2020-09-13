@@ -17,5 +17,5 @@ RSpec.describe ToyRobot::Simulator do
     end
   end
 
-  context "it "
+  context 'it '
 end

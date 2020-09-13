@@ -7,7 +7,6 @@ module ToyRobot
     def initialize
       @table = Table.new(4, 4)
       @input = Command.new('commands.txt')
-      @robot = Robot.new
       check_command
     end
 
@@ -16,9 +15,10 @@ module ToyRobot
     def check_command
       if input.placed? &&
          table.within_boundary?(input.place_location[0], input.place_location[1])
-        run
+          @robot = Robot.new(x:input.place_location[0], y: input.place_location[1],face:input.place_location[2] )
+          run
       else
-        puts 'Simulation cannot commence since the first command is not executible. Please check the command'
+        puts 'Simulation cannot commence since the first command is not executable. Please check the command'
       end
     end
 

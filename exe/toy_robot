@@ -4,4 +4,3 @@
 require_relative '../lib/toy_robot'
 
 input = ToyRobot::Simulator.new
-
