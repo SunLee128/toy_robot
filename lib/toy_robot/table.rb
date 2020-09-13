@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ToyRobot
   class Table
     attr_reader :width, :height
@@ -7,8 +9,7 @@ module ToyRobot
     end
 
     def within_boundary?(x, y)
-      x.between?(0,@width) && y.between?(0,@height)
+      x.between?(0, @width) && y.between?(0, @height)
     end
   end
 end
-
