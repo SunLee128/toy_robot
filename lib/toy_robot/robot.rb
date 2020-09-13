@@ -5,9 +5,9 @@ module ToyRobot
     FACES = %w[NORTH EAST SOUTH WEST].freeze
     attr_accessor :x, :y, :face
 
-    def initialize(x: , y: , face:)
-      @x 
-      @y 
+    def initialize(x:, y:, face:)
+      @x
+      @y
       @face
     end
 

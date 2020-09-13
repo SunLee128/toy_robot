@@ -13,10 +13,13 @@ module ToyRobot
     private
 
     def check_command
-      if input.placed? &&
-         table.within_boundary?(input.place_location[0], input.place_location[1])
-          @robot = Robot.new(x:input.place_location[0], y: input.place_location[1],face:input.place_location[2] )
-          run
+      start_x = input.place_location[0]
+      start_y = input.place_location[1]
+      start_face = input.place_location[2]
+
+      if @input.placed? && @table.within_boundary?(start_x, start_y)
+        @robot = Robot.new(x: start_x, y: start_y, face: start_face)
+        run
       else
         puts 'Simulation cannot commence since the first command is not executable. Please check the command'
       end

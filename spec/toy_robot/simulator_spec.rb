@@ -3,6 +3,9 @@
 require 'spec_helper'
 
 RSpec.describe ToyRobot::Simulator do
+  let(:commands1) { ToyRobot::Command.new(path + '/sample_commands/commands1.txt') }
+  let(:commands2) {ToyRobot::Command.new(path + '/sample_commands/commands2.txt') }
+  let(:commands3) {ToyRobot::Command.new(path + '/sample_commands/commands3.txt') }
   subject { ToyRobot::Simulator.new }
 
   describe '#initialize' do
@@ -17,5 +20,8 @@ RSpec.describe ToyRobot::Simulator do
     end
   end
 
-  context 'it '
+  context 'checks the validity of the first command ' do
+    it 'checks whether the first command is "place"' do
+    end
+  end
 end

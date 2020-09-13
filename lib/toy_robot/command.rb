@@ -7,7 +7,7 @@ module ToyRobot
     # converts txt file into array of commands
     def initialize(file)
       raw_commands = File.readlines(file, chomp: true).map(&:upcase).map(&:strip)
-      @commands = process(raw_commands)
+      p @commands = process(raw_commands)
     end
 
     # scans for "place" and converts to array of values
@@ -15,7 +15,7 @@ module ToyRobot
       @processed_commands = []
       commands.each do |c|
         @processed_commands << if c.upcase.start_with?('PLACE')
-                                 c.scan(/\w+/)
+                                 c.split(/[, ]/)
                                else
                                  c
                                end

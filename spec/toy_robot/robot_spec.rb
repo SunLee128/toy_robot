@@ -2,8 +2,7 @@
 
 require 'spec_helper'
 RSpec.describe ToyRobot::Robot do
-  table = ToyRobot::Table.new(4, 4)
-  subject { ToyRobot::Robot.new(table: table) }
+  subject { ToyRobot::Robot.new(x: 0, y: 0, face: 'NORTH') }
   describe 'attributes' do
     it 'allows read and write for :x' do
       subject.x = 2
@@ -21,24 +20,12 @@ RSpec.describe ToyRobot::Robot do
     end
   end
 
-  describe '#initialize' do
-    it 'has x' do
-      expect(subject.x).not_to be_nil
-    end
-    it 'has y' do
-      expect(subject.y).not_to be_nil
-    end
-    it 'has face' do
-      expect(subject.face).not_to be_nil
-    end
-  end
-
   describe '#move' do
     it 'moves east' do
       subject.face = 'EAST'
       subject.x = 0
       subject.y = 0
-      subject.move
+      subject.move(4, 4)
       expect(subject.x).to eq(1)
     end
 
@@ -46,7 +33,7 @@ RSpec.describe ToyRobot::Robot do
       subject.face = 'EAST'
       subject.x = 4
       subject.y = 0
-      subject.move
+      subject.move(4, 4)
       expect(subject.x).to eq(4)
     end
 
@@ -54,7 +41,7 @@ RSpec.describe ToyRobot::Robot do
       subject.face = 'WEST'
       subject.x = 3
       subject.y = 0
-      subject.move
+      subject.move(4, 4)
       expect(subject.x).to eq(2)
     end
 
@@ -62,7 +49,7 @@ RSpec.describe ToyRobot::Robot do
       subject.face = 'WEST'
       subject.x = 0
       subject.y = 0
-      subject.move
+      subject.move(4, 4)
       expect(subject.x).to eq(0)
     end
 
@@ -70,7 +57,7 @@ RSpec.describe ToyRobot::Robot do
       subject.face = 'NORTH'
       subject.x = 0
       subject.y = 0
-      subject.move
+      subject.move(4, 4)
       expect(subject.y).to eq(1)
     end
 
@@ -78,7 +65,7 @@ RSpec.describe ToyRobot::Robot do
       subject.face = 'NORTH'
       subject.x = 0
       subject.y = 4
-      subject.move
+      subject.move(4, 4)
       expect(subject.y).to eq(4)
     end
 
@@ -86,7 +73,7 @@ RSpec.describe ToyRobot::Robot do
       subject.face = 'SOUTH'
       subject.x = 0
       subject.y = 4
-      subject.move
+      subject.move(4, 4)
       expect(subject.y).to eq(3)
     end
 
@@ -94,7 +81,7 @@ RSpec.describe ToyRobot::Robot do
       subject.face = 'SOUTH'
       subject.x = 0
       subject.y = 0
-      subject.move
+      subject.move(4, 4)
       expect(subject.y).to eq(0)
     end
   end
