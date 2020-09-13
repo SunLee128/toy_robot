@@ -5,21 +5,20 @@ module ToyRobot
     FACES = %w[NORTH EAST SOUTH WEST].freeze
     attr_accessor :x, :y, :face
 
-    def initialize(x: x = 0, y: y = 0, face: face = 'NORTH', table: table)
+    def initialize(x: x = 0, y: y = 0, face: face = 'NORTH')
       @x = x
       @y = y
       @face = face
-      @table = table
     end
 
-    def move
+    def move(w,h)
       case @face
       when 'EAST'
-        move_east
+        move_east(w)
       when 'WEST'
         move_west
       when 'NORTH'
-        move_north
+        move_north(h)
       when 'SOUTH'
         move_south
       end
@@ -37,16 +36,16 @@ module ToyRobot
 
     private
 
-    def move_east
-      @x += 1 if @x < @table.width
+    def move_east(w)
+      @x += 1 if @x < w
     end
 
     def move_west
       @x -= 1 if @x.positive?
     end
 
-    def move_north
-      @y += 1 if @y < @table.height
+    def move_north(h)
+      @y += 1 if @y < h
     end
 
     def move_south

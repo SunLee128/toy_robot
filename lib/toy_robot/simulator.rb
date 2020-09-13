@@ -7,7 +7,7 @@ module ToyRobot
     def initialize
       @table = Table.new(4, 4)
       @input = Command.new('commands.txt')
-      @robot = Robot.new(table: @table)
+      @robot = Robot.new
       check_command
     end
 
@@ -32,7 +32,7 @@ module ToyRobot
         else
           case command
           when 'MOVE'
-            @robot.move
+            @robot.move(@table.width, @table.height)
           when 'LEFT'
             @robot.turn_left
           when 'RIGHT'
