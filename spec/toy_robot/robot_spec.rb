@@ -142,27 +142,4 @@ RSpec.describe ToyRobot::Robot do
       expect(subject.turn_right).to eq('NORTH')
     end
   end
-
-  # describe "#falling?" do
-  #   it 'is on the west edge and facing west' do
-  #     subject.x = 0
-  #     subject.face='WEST'
-  #     expect(subject.falling?(4,4)).to be(true)
-  #   end
-  #   it 'is on the north edge and facing north' do
-  #     subject.y = 4
-  #     subject.face='NORTH'
-  #     expect(subject.falling?(4,4)).to be(true)
-  #   end
-  #   it 'is on the east edge and facing east' do
-  #     subject.x = 4
-  #     subject.face='EAST'
-  #     expect(subject.falling?(4,4)).to be(true)
-  #   end
-  #   it 'is on the south edge and facing south' do
-  #     subject.y = 0
-  #     subject.face='SOUTH'
-  #     expect(subject.falling?(4,4)).to be(true)
-  #   end
-  # end
 end

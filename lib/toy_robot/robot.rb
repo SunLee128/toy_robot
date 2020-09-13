@@ -35,13 +35,6 @@ module ToyRobot
       @face = FACES.rotate[index]
     end
 
-    # def falling?
-    #   (@x == 0 and face =="WEST") ||
-    #   (@y == 0 and face == "SOUTH") ||
-    #   (@x == @table.width and face == "EAST") ||
-    #   (@y == @table.height and face == "NORTH")
-    # end
-
     private
 
     def move_east

@@ -3,5 +3,5 @@
 
 require_relative '../lib/toy_robot'
 
-input = ToyRobot::Command.new('commands.txt')
-p input.commands
+input = ToyRobot::Simulator.new
+
