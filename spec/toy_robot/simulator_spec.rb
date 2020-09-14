@@ -45,25 +45,25 @@ RSpec.describe ToyRobot::Simulator do
     end
   end
 
-  describe "#report" do
+  describe '#report' do
     it 'prints the current location if the robot is placed' do
-      expect{simulator1.report}
-        .to output{"The Robot is currently at x:3, y:3 and facing NORTH."}
+      expect { simulator1.report}
+        .to output {'The Robot is currently at x:3, y:3 and facing NORTH.'}
         .to_stdout
     end
 
     it 'prints "The Robot is not placed" if the robot is not placed' do
-      expect{simulator2.report}
-      .to output{'The Robot is not placed.'}
-      .to_stdout
+      expect {simulator2.report}
+        .to output {'The Robot is not placed.'}
+        .to_stdout
     end
   end
 
-  describe "#place" do
-    it 'does not place robot when x,y is out of table boundary' do 
-      expect{simulator1.place(6,7, "NORTH")}
-      .to output{'The place command at x:6, y:7 is invalid. The command is ignored.'}
-      .to_stdout
+  describe '#place' do
+    it 'does not place robot when x,y is out of table boundary' do
+      expect {simulator1.place(6, 7, 'NORTH')}
+        .to output {'The place command at x:6, y:7 is invalid. The command is ignored.'}
+        .to_stdout
     end
   end
 end

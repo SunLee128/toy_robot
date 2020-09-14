@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module ToyRobot
-
   class Simulator
     def initialize(table_width:, table_height:, file:)
       @table = Table.new(table_width, table_height)
