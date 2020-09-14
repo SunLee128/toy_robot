@@ -6,9 +6,9 @@ module ToyRobot
     attr_accessor :x, :y, :face
 
     def initialize(x:, y:, face:)
-      @x
-      @y
-      @face
+      @x = x
+      @y = y
+      @face = face
     end
 
     def move(w, h)

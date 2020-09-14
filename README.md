@@ -1,25 +1,31 @@
 Toy Robot Simulator
 ===================
-## About
+### About
 This is my solution to the famous Toy Robot Simulator challenge in Ruby. The specification is here. [click on this link](##Specification)
 
-## Installation
+### Installation
+Run the following commands in terminal. 
 ```
 git clone https://github.com/SunLee128/toy_robot.git
 gem install bundler && bundle install
 ```
 
-## How to run
+### How to run
+Run the following command in terminal.
+```
+ bundle exec exe/toy_robot commands.txt 
+```
 
-` bundle exec exe/toy_robot commands.txt `
-
-## How to test
-` rake spec`
+### How to test
+Run the following command in terminal.
+```
+ rake spec
+ ```
 
 --------------------------------------------------
 ## Design 
 
-## Considered Edge Cases
+### Considered Edge Cases
 - First command is not 'PLACE'.
 - First 'PLACE' command does not have valid x,y,f values. 
 - First 'PLACE' command has x,y location outside of table.
@@ -45,17 +51,22 @@ gem install bundler && bundle install
 **Simulator**
 - creating an instance of Table, Command and Robot
 - checking the validity of the commands
-- raise an error on bad commands
-- passing move and turn commands to Robot 
-- report
-- place
+- passing 'MOVE' and 'TURN' commands to Robot 
+- REPORT
+- PLACE
 - ignores invalid commands
 - collaborators: Robot, Table, Command
 
 ## Class Diagram
-
+<div align="left">
+    <img src="img/test_coverage.png" width="800px"</img> 
+</div>
 
 ## Test Coverage
+<div align="left">
+    <img src="img/test_coverage.png" width="800px"</img> 
+</div>
+
 
 --------------------------------------------------
 ## Specification

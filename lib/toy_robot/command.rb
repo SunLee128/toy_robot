@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'pry'
 module ToyRobot
   class Command
     attr_reader :commands, :place_location
