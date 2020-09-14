@@ -8,21 +8,26 @@ RSpec.describe ToyRobot::Command do
   invalid_out_of_range = ToyRobot::Command.new(path + '/sample_commands/commands3.txt')
 
   describe '#initialize' do
-    it 'reads file and returns array' do
+    it 'converts file into Array of commands' do
       expect(valid_commands.commands).to be_an_instance_of(Array)
     end
   end
 
-  describe '#process' do
-    it "scans for string starts with 'PLACE' and converts to Array" do
-      commands = ['PLACE 0,0,NORTH']
-      expect(valid_commands.process(commands)).to be_an_instance_of(Array)
+  describe '#place_location' do
+    it 'returns array' do
+      expect(valid_commands.place_location).to be_an_instance_of(Array)
     end
   end
 
-  describe '#valid?' do
-    it "looks for 'place array' as the first item" do
-      expect(invalid_no_place.placed?).to be false
+  context 'processing Strings' do
+    valid_commands.commands.each do |c|  
+      it  "removes empty strings" do
+        expect(c.length).to be > 0
+      end
+    end
+
+    it "scans for 'PLACE' and converts to array of values" do
+      expect(valid_commands.commands[0]).to be_an_instance_of(Array)
     end
   end
 end

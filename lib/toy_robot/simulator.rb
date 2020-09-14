@@ -1,28 +1,43 @@
 # frozen_string_literal: true
-
+require 'pry'
 module ToyRobot
   class Simulator
-    attr_reader :table, :input, :robot
-
-    def initialize
-      @table = Table.new(4, 4)
-      @input = Command.new('commands.txt')
-      check_command
+    def initialize(table_width:, table_height:, file:)
+      @table = Table.new(table_width, table_height)
+      @input = Command.new(file)
+      @start_x = @input.place_location[0]
+      @start_y = @input.place_location[1]
+      @start_face = @input.place_location[2]
+      check_commands
     end
 
     private
 
-    def check_command
-      start_x = input.place_location[0]
-      start_y = input.place_location[1]
-      start_face = input.place_location[2]
-
-      if @input.placed? && @table.within_boundary?(start_x, start_y)
-        @robot = Robot.new(x: start_x, y: start_y, face: start_face)
+    def check_commands
+      if valid?
+        @robot = Robot.new(x: @start_x, y: @start_y, face: @start_face)
         run
       else
         puts 'Simulation cannot commence since the first command is not executable. Please check the command'
       end
+    end
+
+    def valid?
+      # @input.place_location !=nil && 
+      placed? &&
+      @table.within_boundary?(@start_x, @start_y) && 
+      ['NORTH', 'SOUTH', 'EAST', 'WEST'].include?(@start_face) 
+      
+    #   #check first command is place
+    #   #check start x, y exist
+    #   # check x,y position is within table
+    #  check face value - 
+    end
+
+    def placed?
+      # checks whether the first command is 'place'
+      @input.commands[0].class == Array && 
+      @input.commands[0][0] == 'PLACE'
     end
 
     def run
@@ -60,5 +75,6 @@ module ToyRobot
         puts 'The location is not no the table'
       end
     end
+# binding.pry
   end
 end
