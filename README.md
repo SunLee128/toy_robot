@@ -1,7 +1,7 @@
 Toy Robot Simulator
 ===================
 ### About
-This is my solution to the famous Toy Robot Simulator challenge in Ruby. The specification is here. [click on this link](##Specification)
+This is my solution to the famous Toy Robot Simulator challenge in Ruby.
 
 
 ### Installation
