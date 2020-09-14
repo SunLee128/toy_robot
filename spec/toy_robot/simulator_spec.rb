@@ -10,13 +10,6 @@ RSpec.describe ToyRobot::Simulator do
   simulator4 = ToyRobot::Simulator.new(table_width: 4, table_height: 4, file: path + '/sample_commands/commands4.txt')
   simulator5 = ToyRobot::Simulator.new(table_width: 4, table_height: 4, file: path + '/sample_commands/commands5.txt')
 
-
-  # context 'checks the validity of the first command ' do
-  #   it 'checks whether the first command is "place"' do
-  #     expect(simulator2).to_return('Simulation cannot commence since the first command is not executable. Please check the command.')
-  #   end
-  # end
-
   describe '#start' do
     it 'if the command is valid, it calls #run method' do
       simulator1.start
