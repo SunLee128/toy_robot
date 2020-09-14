@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'pry'
 module ToyRobot
   class Command
@@ -11,31 +12,24 @@ module ToyRobot
     end
 
     def place_location
-        @place_location = [@commands[0][1].to_i, @commands[0][2].to_i, @commands[0][3]] 
+      @place_location = [@commands[0][1].to_i, @commands[0][2].to_i, @commands[0][3]]
     end
 
-    # private
-    # scans for "place" and converts to array of values
+    private
+
+    # process methods removes "" && scans for "PLACE" and converts to array of values 
     def process(commands)
-      empty_s_removed = commands.select { |s| s.length > 1}
+      empty_s_removed = commands.select { |s| s.length > 1 }
       processed_commands = []
 
       empty_s_removed.each do |c|
         processed_commands << if c.upcase.start_with?('PLACE')
-          c.split(/[, ]/)
-        else
-          c
-        end
+                                c.split(/[, ]/)
+                              else
+                                c
+                              end
       end
       processed_commands
     end
-    
-    # def placed?
-    #   # checks whether the first command is 'place'
-    #   @commands[0].class == Array && 
-    #   @commands[0][0] == 'PLACE'
-    # end
-    # binding.pry
-
   end
 end

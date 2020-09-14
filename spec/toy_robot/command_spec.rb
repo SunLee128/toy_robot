@@ -20,8 +20,8 @@ RSpec.describe ToyRobot::Command do
   end
 
   context 'processing Strings' do
-    valid_commands.commands.each do |c|  
-      it  "removes empty strings" do
+    valid_commands.commands.each do |c|
+      it 'removes empty strings' do
         expect(c.length).to be > 0
       end
     end

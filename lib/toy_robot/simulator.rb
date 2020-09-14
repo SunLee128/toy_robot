@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'pry'
+
 module ToyRobot
   class Simulator
     def initialize(table_width:, table_height:, file:)
@@ -16,6 +16,7 @@ module ToyRobot
     def check_commands
       if valid?
         @robot = Robot.new(x: @start_x, y: @start_y, face: @start_face)
+        puts "Toy Robot Simulation Starts"
         run
       else
         puts 'Simulation cannot commence since the first command is not executable. Please check the command'
@@ -23,21 +24,13 @@ module ToyRobot
     end
 
     def valid?
-      # @input.place_location !=nil && 
-      placed? &&
-      @table.within_boundary?(@start_x, @start_y) && 
-      ['NORTH', 'SOUTH', 'EAST', 'WEST'].include?(@start_face) 
-      
-    #   #check first command is place
-    #   #check start x, y exist
-    #   # check x,y position is within table
-    #  check face value - 
-    end
-
-    def placed?
-      # checks whether the first command is 'place'
-      @input.commands[0].class == Array && 
-      @input.commands[0][0] == 'PLACE'
+      #check first command is place
+      #check start x, y is within table
+      #check start face value is valid
+      @input.commands[0].class == Array &&
+      @input.commands[0][0] == 'PLACE' &&
+      @table.within_boundary?(@start_x, @start_y) &&
+      %w[NORTH SOUTH EAST WEST].include?(@start_face)
     end
 
     def run
@@ -72,9 +65,8 @@ module ToyRobot
         @robot.y = y
         @robot.face = face
       else
-        puts 'The location is not no the table'
+        puts "The place command at x:#{x}, y:#{y} is invalid. The command is ignored."
       end
     end
-# binding.pry
   end
 end
