@@ -3,6 +3,7 @@ Toy Robot Simulator
 ### About
 This is my solution to the famous Toy Robot Simulator challenge in Ruby. The specification is here. [click on this link](##Specification)
 
+
 ### Installation
 Run the following commands in terminal. 
 ```
@@ -59,7 +60,7 @@ Run the following command in terminal.
 
 ## Class Diagram
 <div align="left">
-    <img src="img/test_coverage.png" width="800px"</img> 
+    <img src="img/class_diagram.png" width="800px"</img> 
 </div>
 
 ## Test Coverage
