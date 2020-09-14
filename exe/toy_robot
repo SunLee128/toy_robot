@@ -3,4 +3,6 @@
 
 require_relative '../lib/toy_robot'
 
-input = ToyRobot::Simulator.new
+simulator = ToyRobot::Simulator.new(table_width: 4, table_height: 4, file: 'commands.txt')
+simulator.start
+

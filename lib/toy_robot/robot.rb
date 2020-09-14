@@ -40,7 +40,7 @@ module ToyRobot
       if @x < w
         @x += 1
       else
-        puts "Cannot move to East. The command is ignored."
+        puts 'Cannot move to East. The command is ignored.'
       end
     end
 
@@ -48,15 +48,15 @@ module ToyRobot
       if @x.positive?
         @x -= 1
       else
-        puts "Cannot move to West. The command is ignored."
+        puts 'Cannot move to West. The command is ignored.'
       end
     end
 
     def move_north(h)
       if @y < h
-        @y += 1 
+        @y += 1
       else
-        puts "Cannot move to North. The command is ignored."
+        puts 'Cannot move to North. The command is ignored.'
       end
     end
 
@@ -64,7 +64,7 @@ module ToyRobot
       if @y.positive?
         @y -= 1
       else
-        puts "Cannot move to South. The command is ignored."
+        puts 'Cannot move to South. The command is ignored.'
       end
     end
   end

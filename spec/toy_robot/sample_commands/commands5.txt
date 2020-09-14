@@ -1,0 +1,2 @@
+pLACE 5,5,EAT
+MOVE

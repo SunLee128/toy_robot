@@ -17,7 +17,7 @@ module ToyRobot
 
     private
 
-    # process methods removes "" && scans for "PLACE" and converts to array of values 
+    # process methods removes "" && scans for "PLACE" and converts to array of values
     def process(commands)
       empty_s_removed = commands.select { |s| s.length > 1 }
       processed_commands = []

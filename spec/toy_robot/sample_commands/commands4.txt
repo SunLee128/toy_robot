@@ -1,9 +1,5 @@
+pLCE 0,0,EAST
 MOVE
 move
 LEFT
-
-
 MOVE
-
-
-REPORT
