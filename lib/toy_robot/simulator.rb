@@ -8,15 +8,13 @@ module ToyRobot
       @start_x = @input.place_location[0]
       @start_y = @input.place_location[1]
       @start_face = @input.place_location[2]
-      check_commands
+      # check_commands
     end
 
-    private
-
-    def check_commands
+    def start
       if valid?
         @robot = Robot.new(x: @start_x, y: @start_y, face: @start_face)
-        puts "Toy Robot Simulation Starts"
+        puts "Toy Robot simulation started"
         run
       else
         puts 'Simulation cannot commence since the first command is not executable. Please check the command'
@@ -32,6 +30,7 @@ module ToyRobot
       @table.within_boundary?(@start_x, @start_y) &&
       %w[NORTH SOUTH EAST WEST].include?(@start_face)
     end
+
 
     def run
       @input.commands.each do |command|
@@ -56,7 +55,11 @@ module ToyRobot
     end
 
     def report
-      puts "The Robot is currently at x:#{@robot.x}, y:#{@robot.y} and facing #{@robot.face}."
+      if valid?
+        puts "The Robot is currently at x:#{@robot.x}, y:#{@robot.y} and facing #{@robot.face}."
+      else
+        puts "The Robot is not placed"
+      end
     end
 
     def place(x, y, face)
