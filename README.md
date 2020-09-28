@@ -5,7 +5,7 @@ This is my solution to the famous Toy Robot Simulator challenge in Ruby.
 
 
 ### Installation
-Run the following commands in terminal. 
+Run the following commands in terminal.
 ```
 git clone https://github.com/SunLee128/toy_robot.git
 gem install bundler && bundle install
@@ -14,7 +14,7 @@ gem install bundler && bundle install
 ### How to run
 Run the following command in terminal.
 ```
- bundle exec exe/toy_robot commands.txt 
+ bundle exec exe/toy_robot commands.txt
 ```
 
 ### How to test
@@ -28,9 +28,9 @@ Run the following command in terminal.
 
 ### Considered Edge Cases
 - First command is not 'PLACE'.
-- First 'PLACE' command does not have valid x,y,f values. 
+- First 'PLACE' command does not have valid x,y,f values.
 - First 'PLACE' command has x,y location outside of table.
-- Any command other than 'PLACE', 'MOVE','LEFT','RIGHT','REPORT' 
+- Any command other than 'PLACE', 'MOVE','LEFT','RIGHT','REPORT'
 - 'MOVE' command make Robot to fall from the current location.  
 
 ### Object Responsibilities
@@ -47,12 +47,12 @@ Run the following command in terminal.
 **Command**
 - parsing a file into series of commands.
 - cleaning string
-- Knowing the first 'PLACE' command's x,y,f value. 
+- Knowing the first 'PLACE' command's x,y,f value.
 
 **Simulator**
 - creating an instance of Table, Command and Robot
 - checking the validity of the commands
-- passing 'MOVE' and 'TURN' commands to Robot 
+- passing 'MOVE' and 'TURN' commands to Robot
 - REPORT
 - PLACE
 - ignores invalid commands
